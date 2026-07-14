@@ -1,0 +1,25 @@
+{
+  "name": "timekeeper-wa-bot",
+  "private": true,
+  "version": "1.0.0",
+  "description": "WhatsApp attendance bot for TimeKeeper",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "node --test test/*.test.js"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "@google-cloud/storage": "^7.16.0",
+    "@whiskeysockets/baileys": "^7.0.0-rc13",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "firebase-admin": "^13.4.0",
+    "jszip": "^3.10.1",
+    "pino": "^9.6.0",
+    "qrcode": "^1.5.4"
+  }
+}

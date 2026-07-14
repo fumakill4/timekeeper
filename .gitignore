@@ -1,0 +1,20 @@
+# Local configuration and credentials
+.env
+.env.*
+!.env.example
+.firebase/
+.firebaserc
+
+# Dependencies and build output
+node_modules/
+dist/
+
+# Local editor and OS files
+.DS_Store
+*.log
+
+# Local/private documentation and generated exports
+Documentation/ANTIGRAVITY_WORKING_GUIDE.md
+Reference/
+WhatsApp Bot/sessions/
+WhatsApp Bot/*.log
