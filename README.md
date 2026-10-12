@@ -50,7 +50,7 @@ The WhatsApp Bot has its own `.env.example` and README. Its sender allow-list, F
 This project keeps the original developer signature in the source:
 
 ```js
-// This App was build by Chris Tambayong - Fumakill4
+// This App was build by i729 - Fumakill4
 ```
 
 Please retain that attribution when redistributing or adapting the project.

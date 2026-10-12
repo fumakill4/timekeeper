@@ -12,7 +12,7 @@ import { doc, getDoc, serverTimestamp, setDoc } from "firebase/firestore";
 import { updateProfile } from "firebase/auth";
 import { getDownloadURL, ref as storageRef, uploadBytes } from "firebase/storage";
 import { db, storage } from "./lib/firebase";
-// This App was build by Chris Tambayong - Fumakill4
+// This App was build by i729 - Fumakill4
 
 const regionOrder = ["Selatan", "Utara", "Barat"];
 

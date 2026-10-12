@@ -11,17 +11,8 @@ const origins = String(process.env.TIMEKEEPER_ALLOWED_ORIGIN || "").split(",").m
 app.use(cors({ origin: origins.length ? origins : true }));
 app.use(express.json({ limit: "1mb" }));
 
-async function requireFirebaseUser(req, res, next) {
-  const header = req.headers.authorization || "";
-  const token = header.startsWith("Bearer ") ? header.slice(7) : "";
-  if (!token) return res.status(401).json({ error: "Firebase login required" });
-  try {
-    req.firebaseUser = await admin.auth().verifyIdToken(token);
-    return next();
-  } catch {
-    return res.status(401).json({ error: "Firebase token tidak valid atau sudah kedaluwarsa" });
-  }
-}
+const { createRequireAdmin } = require("./http-auth");
+const requireFirebaseUser = createRequireAdmin((token, revoked) => admin.auth().verifyIdToken(token, revoked));
 
 app.get("/health", (req, res) => res.json({ ok: true, service: "timekeeper-wa-bot" }));
 app.get("/api/wa/status", requireFirebaseUser, (req, res) => res.json(status()));
